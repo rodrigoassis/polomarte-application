@@ -34,7 +34,7 @@ interface.**
 
 * Iremos analisar se seu código é limpo e organizado;
 
-* Esperamos que você seja preguiço, então tente escrever a menor quantidade de
+* Esperamos que você seja preguiçoso, então tente escrever a menor quantidade de
 código repetido que puder. Pontos positivos para helpers, decorators, gems.
 
 * Queremos saber se você é um desenvolvedor web de verdade, então queremos o
