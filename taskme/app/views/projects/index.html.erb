@@ -14,7 +14,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to project.name, project_path(project) %></td>
-        <td><%= project.finished %></td>
+        <td><%= project.finished ? 'Yes! Good job!' : 'Not yet!' %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-mini' %>

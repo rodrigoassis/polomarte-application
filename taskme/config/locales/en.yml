@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    links:
+      cancel: Cancel
+      destroy: Destroy
+      edit: Edit
+      new: New
