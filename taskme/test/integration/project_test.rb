@@ -35,7 +35,6 @@ class ProjectTest < ActionDispatch::IntegrationTest
 		fill_in('Name', :with => 'Test')
 		click_button('Create Project')
 
-		assert_equal projects_path, current_path
 		assert page.has_content?('Project was successfully created.')
 	end
 
