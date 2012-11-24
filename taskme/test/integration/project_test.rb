@@ -18,7 +18,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
 	test 'form possui campo name' do
 		visit(new_project_path)
 
-		assert find_field('Name')
+		assert find_field('project_name')
 		assert !page.has_field?('Finished')
 	end
 
@@ -32,7 +32,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
 	test 'create project' do
 		visit(new_project_path)
 
-		fill_in('Name', :with => 'Test')
+		fill_in('project_name', :with => 'Test')
 		click_button('Create Project')
 
 		assert page.has_content?('Project was successfully created.')
