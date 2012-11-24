@@ -12,4 +12,12 @@ class ProjectTest < ActiveSupport::TestCase
 
   	assert !project.save
   end
+
+  test 'name uniqueness' do
+  	project = Project.new(:name => 'Whatever')
+  	assert project.save
+
+  	project = Project.new(:name => 'Whatever')
+  	assert !project.save
+  end
 end
