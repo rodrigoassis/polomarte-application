@@ -5,10 +5,14 @@
 </div>
 
 <% @project.tasks.each do |task| %>
-	<label class="checkbox">
-		<%= check_box_tag(task.id, value = nil, checked = task.finished) %>
-		<strong><%= task.name %></strong> <span style="color: green"><%= '(finished)' if task.finished%></span>
-	</label>
+	<% @task = task %>
+	<%= form_for :task, :url => { :controller => "tasks",
+    :action => 'finish', :id => task.id }, :remote => true do |t|%>
+    <label class="checkbox">
+			<%= check_box_tag(task.id, value = nil, checked = task.finished, :class => 'checkable') %>
+			<strong><%= task.name %></strong> <span id=<%="finished#{task.id}"%> style="color: green"><%= render :partial => 'tasks/finished', :content_type => 'text/html'%></span>
+		</label>
+  <% end %>
 <% end %>
 
 <div class="form-actions">

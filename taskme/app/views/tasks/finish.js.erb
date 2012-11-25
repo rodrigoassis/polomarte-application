@@ -1,0 +1,1 @@
+$("<%= escape_javascript('#finished' + @task.id.to_s) %>").html("<%= escape_javascript(render(:partial => 'tasks/finished', :content_type => 'text/html')).html_safe %>");

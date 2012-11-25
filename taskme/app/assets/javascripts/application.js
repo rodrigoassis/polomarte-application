@@ -10,3 +10,7 @@
 //= require_tree .
 //= require jquery_nested_form
 //= require turbolinks
+
+$('.checkable').live('change', function() {
+	$(this).parents('form:first').submit();
+});
