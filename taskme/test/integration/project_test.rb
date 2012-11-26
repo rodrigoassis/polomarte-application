@@ -38,4 +38,13 @@ class ProjectTest < ActionDispatch::IntegrationTest
 		assert page.has_content?('Project was successfully created.')
 	end
 
+	test 'show project' do
+		project = projects(:breakfast)
+
+		visit(project_path(project))
+
+		assert page.has_content?(project.name)
+		assert page.has_content?(project.tasks.first.name)
+	end
+
 end
